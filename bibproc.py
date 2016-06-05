@@ -22,7 +22,6 @@ for line in sys.stdin.read().split('\r'):
     if len(l) == 0:
         continue
     if line.startswith('@'):
-        #print current
         articles_lines.append(current)
         current = [l]
     else:
@@ -63,7 +62,7 @@ for a in articles_lines:
             else:
                 refkeys.append(refkey)
                 break
-        # print the article again
+        # print the article
         print "%s{%s,"%(etype, refkey)
         for key, val in current.items():
             print "    %s={%s},"%(key, val)
