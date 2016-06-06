@@ -29,13 +29,13 @@ for line in sys.stdin.read().split('\r'):
             current.append(l)
 
 # process entries into key-value pairs
-current = {}
 failed = 0
 refkeys = [] # keep track on refkeys used so far
 
 for a in articles_lines:
     if len(a) == 0:
         continue
+    current = {}
     line1 = a[0]
     etype = line1.split('{')[0] # @article or @something
     for l in a[1:]: # key={value}
